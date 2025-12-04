@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://r2v1mgcqwa4h"]
+
+[ext_resource type="PackedScene" uid="uid://bxfevggvxo634" path="res://assets/background/space_background.tscn" id="1_4pqju"]
+[ext_resource type="PackedScene" uid="uid://dmv50krf4bo5r" path="res://lessons/ship.tscn" id="2_qh2o5"]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="SpaceBackground" parent="." instance=ExtResource("1_4pqju")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Ship" parent="." instance=ExtResource("2_qh2o5")]
+position = Vector2(946, 546)

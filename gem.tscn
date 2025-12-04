@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://djdg6fagrspd0"]
+
+[node name="Gem" type="Area2D" groups=["gem"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
