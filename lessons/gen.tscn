@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbqu8kg6jlhxs"]
+
+[ext_resource type="Script" uid="uid://v4ikmjerj3e5" path="res://lessons/gen.gd" id="1_qmtpd"]
+[ext_resource type="Texture2D" uid="uid://d0bh8am2qd005" path="res://assets/gem_icon.png" id="1_ssde6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qmtpd"]
+radius = 27.66
+
+[node name="Gen" type="Area2D" groups=["gem"]]
+scale = Vector2(0.7711891, 0.7955881)
+script = ExtResource("1_qmtpd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(355, 114)
+scale = Vector2(1.3571428, 6.75)
+texture = ExtResource("1_ssde6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(354.00003, 110.99999)
+scale = Vector2(2.2229862, -5.803369)
+shape = SubResource("CircleShape2D_qmtpd")

@@ -1,16 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1yl6aosq3kty"]
+[gd_scene load_steps=2 format=3 uid="uid://b1yl6aosq3kty"]
 
 [ext_resource type="Script" uid="uid://bcp1vqduh2a7l" path="res://random_item_placer.gd" id="1_1wax0"]
-[ext_resource type="PackedScene" uid="uid://4clsvdvuyocx" path="res://lessons/gem.tscn" id="2_50sli"]
 
 [node name="RandomItemPlacer" type="Node2D"]
+position = Vector2(1.9999999, 0)
+scale = Vector2(1.1403247, 0.22657663)
 script = ExtResource("1_1wax0")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.11
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="HealthPack" parent="." instance=ExtResource("2_50sli")]
-position = Vector2(-353, -107)
-scale = Vector2(1.5834322, 1.5259299)
