@@ -8,6 +8,7 @@ radius = 27.66
 
 [node name="Gen" type="Area2D" groups=["gem"]]
 scale = Vector2(0.7711891, 0.7955881)
+collision_mask = 2
 script = ExtResource("1_qmtpd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -1,18 +1,23 @@
 extends Area2D
 
-var health := 10
+
 var max_speed := 1200.0
 var velocity := Vector2(0, 0)
 var steering_factor := 3.0
+
+var health := 10
 var gem_count := 0
+
+
+func _ready() -> void:
+	area_entered.connect(_on_area_entered)
+	set_health(health)
+
 
 func _process(delta: float) -> void:
 	var direction := Vector2(0, 0)
 	direction.x = Input.get_axis("move_left", "move_right")
 	direction.y = Input.get_axis("move_up", "move_down")
-	var viewport_size := get_viewport_rect().size
-	position.x = wrapf(position.x, 0, viewport_size.x)
-	position.y = wrapf(position.y, 0, viewport_size.y)
 
 	if direction.length() > 1.0:
 		direction = direction.normalized()
@@ -21,13 +26,14 @@ func _process(delta: float) -> void:
 	var steering := desired_velocity - velocity
 	velocity += steering * steering_factor * delta
 	position += velocity * delta
-
-	if velocity.length() > 0:
-		get_node("Sprite2D").rotation = velocity.angle()
-func _ready() ->void:
-	set_health(50)
-	area_entered.connect(_on_area_entered)
 	
+	var viewport_size := get_viewport_rect().size
+	position.x = wrapf(position.x, 0, viewport_size.x)
+	position.y = wrapf(position.y, 0, viewport_size.y)
+
+	if velocity.length() > 0.0:
+		get_node("Sprite2D").rotation = velocity.angle()
+
 
 func set_gem_count(new_gem_count: int) -> void:
 	gem_count = new_gem_count
